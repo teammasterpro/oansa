@@ -93,7 +93,7 @@
     <main class="app-content">
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-dashboard"></i> Dashboard</h1>
+          <h1><i class="fa fa-dashboard"></i> Lideres</h1>
           <p>A free and open source Bootstrap 4 admin template</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">

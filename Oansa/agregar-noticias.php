@@ -13,6 +13,7 @@
   <?php
     include_once 'plantillas/menu.inc.php'
   ?>
+
   
   <main class="app-content">
     <div class="app-title">
@@ -55,6 +56,7 @@
         </div>
       </div>
     </form>
+
   </main>
 
   <!-- Essential javascripts for application to work-->

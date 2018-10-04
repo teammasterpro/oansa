@@ -84,6 +84,7 @@
         </li>
       </ul>
     </header>
+    
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     
@@ -118,16 +119,37 @@
               <div class="row">
                 <div class="col-lg-6">
                   <form>
-                      <fieldset>
-                          <legend class="form-group">Datos personales</legend>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre de la iglesia</font></font></label>
-                      <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Nombre de la iglesia"><small class="form-text text-muted" id="emailHelp"><font style="vertical-align: inherit;"></font></small>
+                    <fieldset>
+                    <legend class="form-group">Datos personales</legend>
+                    <!--Documento-->
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Número de documento</font></font></label>
+                          <input class="form-control" id="" type="text" aria-describedby="emailHelp" placeholder="Número de documento"><small class="form-text text-muted" id="emailHelp"><font style="vertical-align: inherit;"></font></small>
+                        </div>
+                      </div>
+
+                      <!--Tipo de documento-->
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tipo documento</font></font></label>
+                          <select class="form-control" id="exampleSelect1">
+                            <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">---Selecione---</font></font></option>
+                            <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cedula</font></font></option>
+                            <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Pasaporte</font></font></option>
+                            <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tarjeta de identidad</font></font></option>
+                          </select>
+                        </div>                        
+                      </div>
                     </div>
+                   
+                    <!--Nombre-->
                     <div class="form-group">
-                      <label for="exampleInputPassword1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Denominación</font></font></label>
+                      <label for=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre</font></font></label>
                       <select class="form-control"><option value="op1">Alianza</option> </select>
                     </div>
+
                     <div class="form-group">
                       <label for="exampleSelect1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">País</font></font></label>
                       <select class="form-control" id="exampleSelect1">
@@ -138,6 +160,8 @@
                         <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Venezuela</font></font></option>
                       </select>
                     </div>
+
+
                     <div class="form-group">
                       <label for="exampleSelect2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Departamento</font></font></label>
                       <select class="form-control" id="exampleSelect1">

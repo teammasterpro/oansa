@@ -103,52 +103,93 @@
   <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
   
   <?php
-      include_once 'plantillas/Menu.inc.php' 
-    ?>
+  include_once 'plantillas/Menu.inc.php'
+  ?>
 
   <main class="app-content">
     <div class="app-title">
       <div>
-        <h1>Agregar noticias</h1>
+        <h1>Noticias</h1>
       </div>
     </div>
     <form action="app/noticia.class.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
-            <div class="form-group">
-              <label>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Nombre de la noticia</font>
-                </font>
-              </label>
-              <input class="form-control" type="text" aria-describedby="emailHelp" placeholder="Nombre de la noticia"><small
-                class="form-text text-muted" id="emailHelp">
-                <font style="vertical-align: inherit;"></font>
-              </small>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Noticia</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Día del color</td>
+                  <td>13/09/2018 11:14 am</td>
+                  <td>
+                    <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i></button>
+                    <button type="button" class="btn btn-warning"><i class="icon fa fa-pencil"></i></button>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                      <i class="icon fa fa-remove"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Personajes bíblicos</td>
+                  <td>13/09/2018 11:14 am</td>
+                  <td>
+                    <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i></button>
+                    <button type="button" class="btn btn-warning"><i class="icon fa fa-pencil"></i></button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                      <i class="icon fa fa-remove"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Venta de tamales</td>
+                  <td>13/09/2018 11:14 am</td>
+                  <td>
+                    <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i></button>
+                    <button type="button" class="btn btn-warning"><i class="icon fa fa-pencil"></i></button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                      <i class="icon fa fa-remove"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 class="mb-3 line-head" id="buttons"></h2>
+            <button onclick="location.href='agregar-noticias.php'" type="button" class="btn btn-success"><i class="icon fa fa-plus"></i> Nueva</button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Desea borrar esta noticia</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Día del color
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-danger">Borrar</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <label>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Descripción de la noticia</font>
-                </font>
-              </label>
-              <textarea class="form-control text-justify" name="" id="" cols="30" rows="10" placeholder="Describe la noticia"></textarea>
-            </div>
-            <div class="form-group">
-              <label>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Foto principal de la noticia</font>
-                </font>
-              </label>
-              <input class="form-control-file" type="file" name="" id="img">
-            </div>
-            <input class="btn btn-primary" type="submit" value="Agregar">
-          </div>
+
         </div>
       </div>
     </form>
-  </main>
+  </main>  
   <!-- Essential javascripts for application to work-->
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/popper.min.js"></script>

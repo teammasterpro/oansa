@@ -3,7 +3,10 @@
     {
         public function index()
         {
-            $this->load->view("index.html");
+            $datos = array(
+                'mensaje' => null
+            );
+            $this->load->view("index", $datos);
         }
     }
     

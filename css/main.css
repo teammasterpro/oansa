@@ -5644,7 +5644,7 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1050;
+  z-index: 105000000;
   display: none;
   overflow: hidden;
   outline: 0;
@@ -5721,7 +5721,7 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1040;
+  z-index: 1000; /*Cambio para que el modal no aparesca oculto*/
   background-color: #000;
 }
 
@@ -15248,7 +15248,7 @@ p {
 }
 /*Lineas de codigo de la ventana Modal */
 
-.modalDialog {
+/*.modalDialog {
 	position: fixed;
 	font-family: Arial, Helvetica, sans-serif;
 	top: 0;
@@ -15266,7 +15266,7 @@ p {
 }
 .modalDialog h1 {
   font-weight:bold;
-  -webkit-text-fill-color: #F2E500;/*Color amarillo del Logo*/
+  -webkit-text-fill-color: #F2E500;/*Color amarillo del Logo
   -webkit-text-stroke: 2px black;
   font-size: 50px;
 }
@@ -15308,7 +15308,7 @@ transition: opacity 400ms ease-in;
 }
 .close:hover { background: #00d9ff; }
 
-/*Final del codigo del modal*/
+Final del codigo del modal*/
 
 ul, ol {
   list-style:none;

@@ -26,139 +26,229 @@
 
 <body class="app sidebar-mini rtl" style="overflow-x:hidden;">
   <!-- Navbar-->
-  <header class="app-header"><a class="app-header__logo" href="index"><input type=image src="<?= base_url() ?>img/oansa.png" alt="description"
-        align="Right"></a>
+  <header class="app-header"><a class="app-header__logo" href="index"><input type=image src="<?= base_url() ?>img/oansa.png"
+        alt="description" align="Right"></a>
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
       <li id="list_desplegable"><a class="app-nav__item" href="#"><i class="fa fa-edit"></i>Acerca de</a>
         <ul>
-          <li><a href="#openModalOanza">¿Qué es Oanza?</a></li>
-          <li><a href="#openHimnoOanza">Himno de Oanza</a></li>
-          <li><a href="#openPromesaOanza">Promesa o Lema</a> </li>
-          <li><a href="#openVersiculoOanza">Versiculo</a> </li>
+          <li><a href="#" data-toggle="modal" data-target="#modalOansa">¿Qué es Oanza?</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#modalHimno">Himno de Oanza</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#modalPromesa">Promesa o Lema</a> </li>
+          <li><a href="#" data-toggle="modal" data-target="#modalVersiculo">Versiculo</a> </li>
         </ul>
       </li>
 
-      <li><a class="app-nav__item" href="#openModalStudent"><i class="fa fa-book"></i> Estudiante</a></li>
+      <li><a class="app-nav__item" href="#" data-toggle="modal" data-target="#modalEstudiante"><i class="fa fa-book"></i>
+          Estudiante</a></li>
       <li><a class="app-nav__item" href="#"><i class="fa fa-money"></i> Donación</a></li>
-      <li><a class="app-nav__item" href="reg-iglesia.html"><i class="fa fa-edit"></i> Registrar iglesia</a></li>
-      <li><a class="app-nav__item" href="#openModal"><i class="fa fa-user"></i>Iniciar Sesión</a></li>
+      <li><a class="app-nav__item" href="<?= base_url() ?>reg-iglesia.html"><i class="fa fa-edit"></i> Registrar
+          iglesia</a></li>
+      <li><a class="app-nav__item" href="#" data-toggle="modal" data-target="#modalLogin"><i class="fa fa-user"></i>
+          IniciarSesión</a></li>
 
-      <div id="openModal" class="modalDialog">
-        <div>
-          <a href="#close" title="Close" class="close">X</a>
-          <div class="login-box">
-            <form class="login-form" action="menu.php">
-              <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>INGRESAR</h3>
-              <div class="form-group">
-                <label class="control-label">USUARIO</label>
-                <input class="form-control" type="text" placeholder="Usuario" autofocus>
+      <!-- Modal Login-->
+      <form class="login-form" action="<?= base_url() ?>login" method="POST">
+        <div class="modal fade" id="modalLogin" tabindex="10" role="dialog" aria-labelledby="modalLoginCenterTitle"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle"><i class="fa fa-user"></i> Ingresar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-              <div class="form-group">
-                <label class="control-label">CONTRASEÑA</label>
-                <input class="form-control" type="password" placeholder="Contraseña">
-              </div>
-              <div class="form-group">
-                <div class="utility">
-
+              <div class="modal-body">
+                <div class="form-group">
+                  <label class="control-label">Usuario</label>
+                  <input class="form-control" type="text" name="usuario" placeholder="Usuario" autofocus>
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Contraseña</label>
+                  <input class="form-control" type="password" name="password" placeholder="Contraseña">
                 </div>
               </div>
-              <div class="form-group btn-container">
-                <button class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>ENTRAR</button>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close"></i>Cerrar</button>
+                <button class="btn btn-primary" type="submit"><i class="fa fa-sign-in"></i>Entrar</button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
-      <div id="openModalStudent" class="modalDialog">
-        <div>
-          <a href="#close" title="Close" class="close">X</a>
-          <div class="login-box">
-            <form class="login-form" action="menu.html">
-              <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>DATOS DEL ESTUDIANTE</h3>
+      </form>
+
+      
+
+        <!--<script src="<?= base_url() ?>js/jquery-3.2.1.min.js"></script>
+        <script src="<?= base_url() ?>js/popper.min.js"></script>
+        <script src="<?= base_url() ?>js/bootstrap.min.js"></script>
+        <script src="<?= base_url() ?>js/main.js"></script>
+
+        <script src="<?= base_url() ?>js/plugins/pace.min.js"></script>
+        <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+              $.notify({
+                title: "Error : ",
+                message: "Datos incorrectos",
+                icon: 'fa fa-check' 
+              },{
+                type: "danger"
+              });
+            });
+          </script>-->
+
+      <!--Modal estudiante-->
+      <div class="modal fade" id="modalEstudiante" tabindex="10" role="dialog" aria-labelledby="modalEstudianteCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle"><i class="fa fa-user"></i> Datos del estudiante</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
               <div class="form-group">
-                <label class="control-label">DOCUMENTO DEL ACUDIENTE</label>
+                <label class="control-label">Documento del acudiente</label>
                 <input class="form-control" type="password" placeholder="Acudiente" autofocus>
               </div>
               <div class="form-group">
-                <label class="control-label">DOCUMENTO DEL ESTUDIANTE</label>
+                <label class="control-label">Documento del estudiante</label>
                 <input class="form-control" type="password" placeholder="Estudiante">
               </div>
-              <div class="form-group">
-                <div class="utility">
-
-                </div>
-              </div>
-              <div class="form-group btn-container">
-                <button class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>ENTRAR</button>
-              </div>
-            </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close"></i>Cerrar</button>
+              <button class="btn btn-primary"><i class="fa fa-sign-in fa-lg fa-fw"></i>Entrar</button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div id="openModalOanza" class="modalDialog">
-        <div>
-          <a href="#close" title="Close" class="close">X</a>
-          <img src="img/oansa1.png" alt="Oansa" width="80%">
-          <hr />
-          <p>
-            Es un ministerio bibliocéntrico, no denominacional, dirigido a las Iglesias Evangélicas, que provee
-            programas para niños,
-            niñas, adolescentes y jóvenes. Por ser un ministerio para la Iglesia, es administrado por ella (la Iglesia
-            local),
-            siendo uno de los objetivos, el desarrollo de sus miembros. El enfoque en la juventud da un resultado
-            fructífero
-            en la expansión de la iglesia local. No solamente se atraen niños y jóvenes para guiarlos a Cristo, sino
-            también
-            a sus familias. <br /> Bendición #1. Ayuda a mantener el objeto principal de la iglesia.<br /> Bendición
-            #2. Provee un ambiente para el crecimiento de nuevos líderes de la iglesia.<br /> Bendición #3. Asiste a la
-            iglesia
-            en cultivar padres con mente espiritual.<br /> Bendición #4. Fundamenta a la próxima generación de la
-            Iglesia
-            a la Palabra de Dios.<br /> Bendición #5. Edifica un sentido eclesial de comunidad y familia.
-          </p>
+      <!--Modal oansa-->
+      <div class="modal fade" id="modalOansa" tabindex="10" role="dialog" aria-labelledby="modalOansaCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <img src="<?= base_url() ?>img/oansa.png" alt="Oansa" style="position: initial">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p class="text-justify">
+                Es un ministerio bibliocéntrico, no denominacional, dirigido a las Iglesias Evangélicas, que provee
+                programas para niños,
+                niñas, adolescentes y jóvenes. Por ser un ministerio para la Iglesia, es administrado por ella (la
+                Iglesia
+                local),
+                siendo uno de los objetivos, el desarrollo de sus miembros. El enfoque en la juventud da un resultado
+                fructífero
+                en la expansión de la iglesia local. No solamente se atraen niños y jóvenes para guiarlos a Cristo,
+                sino
+                también
+                a sus familias. <br /> <br /> Bendición #1. Ayuda a mantener el objeto principal de la iglesia.<br />
+                Bendición
+                #2. Provee un ambiente para el crecimiento de nuevos líderes de la iglesia.<br /> Bendición #3. Asiste
+                a la
+                iglesia
+                en cultivar padres con mente espiritual.<br /> Bendición #4. Fundamenta a la próxima generación de la
+                Iglesia
+                a la Palabra de Dios.<br /> Bendición #5. Edifica un sentido eclesial de comunidad y familia.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close"></i>Cerrar</button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div id="openHimnoOanza" class="modalDialog">
-        <div>
-          <a href="#close" title="Close" class="close">X</a>
-          <h1>HIMNO DE OANSA</h1>
-          <hr />
-          <p>
-            FIRME OANSA VA,<br /> CON LO QUE CRISTO DA.<br /> APROVADOS OBREROS SER<br /> Y CUMPLIR CON SU GRAN DEBER.<br /><br />
+      <!--Modal himno-->
+      <div class="modal fade" id="modalHimno" tabindex="10" role="dialog" aria-labelledby="modalHimnoCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Himno de oansa</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>
+                FIRME OANSA VA,<br /> CON LO QUE CRISTO DA.<br /> APROVADOS OBREROS SER<br /> Y CUMPLIR CON SU GRAN
+                DEBER.<br /><br />
 
-            <strong>CORO</strong><br /> OANSA JOVENES MARCHAD<br /> OANSA FUERTES EN VERDAD<br /> FIRME EN DIOS Y LA
-            BIBLIA
-            FIEL
-            <br /> OANSA VA...<br /><br /> SEGUIR AL SALVADOR<br /> MARCHANDO SIN TEMOR<br /> EN SU PERFECTO AMOR<br /><br />
-            LOOR
-            CANTAR SU<br /> CAUSA DEFENDER<br /> SU OBRA EXTENDER<br /> LUCHAR CON GRAN PODER<br /> POR CRISTO EL REY..
-          </p>
+                <strong>CORO</strong><br /> OANSA JOVENES MARCHAD<br /> OANSA FUERTES EN VERDAD<br /> FIRME EN DIOS Y
+                LA
+                BIBLIA
+                FIEL
+                <br /> OANSA VA...<br /><br /> SEGUIR AL SALVADOR<br /> MARCHANDO SIN TEMOR<br /> EN SU PERFECTO AMOR<br /><br />
+                LOOR
+                CANTAR SU<br /> CAUSA DEFENDER<br /> SU OBRA EXTENDER<br /> LUCHAR CON GRAN PODER<br /> POR CRISTO EL
+                REY..
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close"></i>Cerrar</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div id="openPromesaOanza" class="modalDialog">
-        <div>
-          <a href="#close" title="Close" class="close">X</a>
-          <h1>PROMESA</h1>
-          <hr />
-          <p>
-            YO ME COMPROMETO<br /> CON EL PROPOSITO<br /> DE LOS CLUBES OANSA.<br /> DE ALCANZAR A LA NIÑEZ<br /> Y LA
-            JUVENTUD
-            Y ENTRENARLES<br /> PARA QUE LE SIRVAN.
-          </p>
+
+      <!--Modal promesa-->
+      <div class="modal fade" id="modalPromesa" tabindex="10" role="dialog" aria-labelledby="modalPromesaCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Promesa</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>
+                YO ME COMPROMETO<br /> CON EL PROPOSITO<br /> DE LOS CLUBES OANSA.<br /> DE ALCANZAR A LA NIÑEZ<br /> Y
+                LA
+                JUVENTUD
+                Y ENTRENARLES<br /> PARA QUE LE SIRVAN.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close"></i>Cerrar</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div id="openVersiculoOanza" class="modalDialog">
-        <div>
-          <a href="#close" title="Close" class="close">X</a>
-          <h1>TEXTO LEMA</h1>
-          <hr />
-          <p>"Procura con diligencia presentarte a Dios, aprobado como obrero que no tiene de qué avergonzarse, que usa
-            bien
-            la Palabra de Verdad".<br /> 2 Timoteo 2:15
-          </p>
+
+      <!--Modal versiculo-->
+      <div class="modal fade" id="modalVersiculo" tabindex="10" role="dialog" aria-labelledby="modalVersiculoCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Texto lema</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>"Procura con diligencia presentarte a Dios, aprobado como obrero que no tiene de qué avergonzarse, que
+                usa
+                bien
+                la Palabra de Verdad".<br /> 2 Timoteo 2:15
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close"></i>Cerrar</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -521,6 +611,17 @@
           </select>
         </div>
 
+        <div class="form-group">
+          <label for="exampleInputPassword1">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Iglesia</font>
+            </font>
+          </label>
+          <select class="form-control">
+            <option value="op1">Emmanuel</option>
+          </select>
+        </div>
+
         <div class="tile-footer">
           <button class="btn btn-primary" type="submit">
             <font style="vertical-align: inherit;">
@@ -552,6 +653,23 @@
   <!-- The javascript plugin to display page loading on top-->
   <script src="<?= base_url() ?>js/plugins/pace.min.js"></script>
   <!-- Page specific javascripts-->
+  <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
+  <?php 
+      if($mensaje == "Datos incorrectos"){
+        echo $mensaje;
+        ?>
+          <script type="text/javascript">
+            $(document).ready(function(){
+              $.notify({
+                title: "Error : ",
+                message: "Datos incorrectos",
+                icon: 'fa fa-edit' 
+              },{
+                type: "danger"
+              });
+            });
+          </script>
+      <? } ?>
   <script type="text/javascript" src="<?= base_url() ?>js/plugins/chart.js"></script>
 
 </body>

@@ -1,4 +1,4 @@
-<header class="app-header"><a class="app-header__logo" href="index.html"><input type=image src="img/oansa.png" alt="description" align="Right"></a>
+<header class="app-header"><a class="app-header__logo" href="<?php echo base_url('opcionesC/oansa') ?>"><input type=image src="<?= base_url() ?>img/oansa.png" alt="description" align="Right"></a>
       <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <!-- Navbar Right Menu-->
       <ul class="app-nav">

@@ -48,7 +48,7 @@
           IniciarSesión</a></li>
 
       <!-- Modal Login-->
-      <form class="login-form" action="<?= base_url() ?>login" method="POST">
+      <form class="login-form" action="<?= base_url() ?>loginC" method="POST">
         <div class="modal fade" id="modalLogin" tabindex="10" role="dialog" aria-labelledby="modalLoginCenterTitle"
           aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -77,27 +77,6 @@
           </div>
         </div>
       </form>
-
-      
-
-        <!--<script src="<?= base_url() ?>js/jquery-3.2.1.min.js"></script>
-        <script src="<?= base_url() ?>js/popper.min.js"></script>
-        <script src="<?= base_url() ?>js/bootstrap.min.js"></script>
-        <script src="<?= base_url() ?>js/main.js"></script>
-
-        <script src="<?= base_url() ?>js/plugins/pace.min.js"></script>
-        <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-              $.notify({
-                title: "Error : ",
-                message: "Datos incorrectos",
-                icon: 'fa fa-check' 
-              },{
-                type: "danger"
-              });
-            });
-          </script>-->
 
       <!--Modal estudiante-->
       <div class="modal fade" id="modalEstudiante" tabindex="10" role="dialog" aria-labelledby="modalEstudianteCenterTitle"
@@ -511,32 +490,16 @@
               <font style="vertical-align: inherit;">País</font>
             </font>
           </label>
-          <select class="form-control" id="exampleSelect1">
-            <option>
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Colombia</font>
-              </font>
-            </option>
-            <option>
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Peru</font>
-              </font>
-            </option>
-            <option>
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Bolivia</font>
-              </font>
-            </option>
-            <option>
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Argentina</font>
-              </font>
-            </option>
-            <option>
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Venezuela</font>
-              </font>
-            </option>
+          <select class="form-control" id="pais" onchange="departamento()">
+            <?php
+              foreach ($consulta->result() as $fila) {
+            ?>
+                <option value=<?= $fila->idPais ?>>
+                    <?= $fila->Nombre ?>
+                </option>
+            <?php
+              }
+            ?>    
           </select>
         </div>
 
@@ -655,22 +618,32 @@
   <!-- Page specific javascripts-->
   <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
   <?php 
-      if($mensaje == "Datos incorrectos"){
-        echo $mensaje;
+      if(isset($mensaje)){
         ?>
+        <? echo "imprime";?>
           <script type="text/javascript">
             $(document).ready(function(){
               $.notify({
-                title: "Error : ",
-                message: "Datos incorrectos",
-                icon: 'fa fa-edit' 
+                title: <? echo $titulo;?>,
+                message: <? echo $mensaje;?>,
+                icon: <? echo $icono;?> 
               },{
-                type: "danger"
+                type: <? echo $tipo;?>
               });
             });
           </script>
       <? } ?>
   <script type="text/javascript" src="<?= base_url() ?>js/plugins/chart.js"></script>
+  <script>
+    funtion departamento(){
+      var pais = document.getElementById("pais").value;
+      document.write(pais);
+      <?php 
+      $pais = "<script> document.write(pais) </script>";
+      echo "latitude = $pais <br>";
+      //echo base_url('inicioC/departamento/<script> document.write(pais) </script>') ?>
+    }
+  </script>
 
 </body>
 

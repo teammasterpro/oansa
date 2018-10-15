@@ -1,17 +1,3 @@
-    <?php
-      //include_once 'plantillas/inicio.inc.php' 
-    ?>
-
-    <!-- Navbar-->
-    <?php
-      //include_once 'plantillas/navbar.inc.php' 
-    ?>
-
-    <?php
-      //include_once 'plantillas/menu.inc.php' 
-    ?>
-
-    <!--Menu-->
     <main class="app-content">
       <div class="app-title">
         <div>

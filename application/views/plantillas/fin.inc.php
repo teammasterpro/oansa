@@ -1,3 +1,17 @@
+    <script type="text/javascript">
+    function funcion(){
+      alert('Hola mundo');
+      alert('Hola mundo');
+      alert('Hola mundo');
+
+      var array = [<?php echo $nombre ?>, <?php echo $rol ?>, <?php echo $foto ?>];
+      $.ajax({
+          type: 'POST',
+          url: '<?php echo base_url('opcionesC') ?>',
+          data: {'array': JSON.stringify(array)}
+        });
+    }
+    </script>
     <!-- Google analytics script-->
     <script type="text/javascript">
       if(document.location.hostname == 'pratikborsadiya.in') {

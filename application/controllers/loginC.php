@@ -1,6 +1,6 @@
 <?php
 
-class Login extends CI_Controller
+class LoginC extends CI_Controller
 {
     public function index()
     {

@@ -1,20 +1,3 @@
-  <?php
-    include_once 'plantillas/inicio.inc.php' 
-  ?>
-
-  <body class="app sidebar-mini rtl">
-    <!-- Navbar-->
-    <?php
-      include_once 'plantillas/navbar.inc.php' 
-    ?>
-    
-    <!-- Sidebar menu-->
-    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-    <?php
-    include_once 'plantillas/menu.inc.php'
-    ?>
-
-    <!--Menu-->
     <main class="app-content">
       <div class="app-title">
         <div>

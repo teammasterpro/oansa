@@ -32,8 +32,8 @@
     <ul class="app-nav">
       <li id="list_desplegable"><a class="app-nav__item" href="#"><i class="fa fa-edit"></i>Acerca de</a>
         <ul>
-          <li><a href="#" data-toggle="modal" data-target="#modalOansa">¿Qué es Oanza?</a></li>
-          <li><a href="#" data-toggle="modal" data-target="#modalHimno">Himno de Oanza</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#modalOansa">¿Qué es Oansa?</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#modalHimno">Himno de Oansa</a></li>
           <li><a href="#" data-toggle="modal" data-target="#modalPromesa">Promesa o Lema</a> </li>
           <li><a href="#" data-toggle="modal" data-target="#modalVersiculo">Versiculo</a> </li>
         </ul>
@@ -48,7 +48,7 @@
           IniciarSesión</a></li>
 
       <!-- Modal Login-->
-      <form class="login-form" action="<?= base_url() ?>loginC" method="POST">
+      <form class="login-form" action="<?= base_url() ?>opcionesC" method="POST">
         <div class="modal fade" id="modalLogin" tabindex="10" role="dialog" aria-labelledby="modalLoginCenterTitle"
           aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">

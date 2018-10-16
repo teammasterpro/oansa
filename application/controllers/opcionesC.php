@@ -56,7 +56,7 @@ class OpcionesC extends CI_Controller
             'foto' => $foto,
             'mensaje' => "Bienvenido"
         );
-        
+
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
         $this->load->view('/plantillas/opciones.inc.php', $datos);
@@ -275,22 +275,13 @@ class OpcionesC extends CI_Controller
 
     public function noticias()
     {
-            //Codigo para cargar la vista de noticias            
-        $nombre = $this->input->post('nombre');
-        $rol = $this->input->post('rol');
-        $foto = $this->input->post('foto');
+            //Codigo para cargar la vista de noticias   
+        $data = $this->input->post();
+        print_r($data);
 
-        $datos = array(
-
-            'nombre' => $nombre,
-            'rol' => $rol,
-            'foto' => $foto,
-            'mensaje' => "Bienvenido"
-        );
-
-        echo $nombre;
-        echo $rol;
-        echo $foto;
+        $nombre = $this->input->post("nombre");
+        $rol = $this->input->post("rol");
+        $foto = $this->input->post("foto");
 
         $datos = array(
 

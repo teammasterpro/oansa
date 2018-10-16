@@ -1,14 +1,22 @@
     <script type="text/javascript">
     function funcion(){
-      alert('Hola mundo');
-      alert('Hola mundo');
-      alert('Hola mundo');
 
-      var array = [<?php echo $nombre ?>, <?php echo $rol ?>, <?php echo $foto ?>];
+      var nombre = document.getElementById('nombre').innerHTML;
+      var rol = document.getElementById('rol').innerHTML;
+      var foto = document.getElementById("foto").src;
+      alert("Hola mundo " + nombre + "\n" + rol + "\n" + foto);
+
       $.ajax({
-          type: 'POST',
-          url: '<?php echo base_url('opcionesC') ?>',
-          data: {'array': JSON.stringify(array)}
+          type: "POST",
+          url: "localhost/oansa/opcionesC",
+          data: {
+            'nombre': nombre,
+            'rol': rol,
+            'foto': foto
+            }
+        })
+        .done(function( msg ) {
+          alert( "Devolución de PHP "+ msg);
         });
     }
     </script>

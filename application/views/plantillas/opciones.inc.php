@@ -1,10 +1,10 @@
 <!-- Sidebar menu-->
 <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 <aside class="app-sidebar">
-      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src=<?= $foto ?> alt="User Image" style="width: 48px; height: 48px ">
+      <div class="app-sidebar__user"><img id="foto" class="app-sidebar__user-avatar" src=<?= $foto ?> alt="User Image" style="width: 48px; height: 48px ">
         <div>
-          <p class="app-sidebar__user-name"><?= $nombre ?></p>
-          <p class="app-sidebar__user-designation"><?= $rol ?></p>
+          <p id="nombre" class="app-sidebar__user-name"><?= $nombre ?></p>
+          <p id="rol" class="app-sidebar__user-designation"><?= $rol ?></p>
         </div>
       </div>
 

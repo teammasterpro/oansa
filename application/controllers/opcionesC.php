@@ -3,6 +3,17 @@
 class OpcionesC extends CI_Controller
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+     
+        // load Session Library
+        $this->load->library('session');
+         
+        // load url helper
+        $this->load->helper('url');
+    }
+
     public function index()
     {
         $usuario = $this->input->post('usuario');
@@ -16,15 +27,39 @@ class OpcionesC extends CI_Controller
 
             $datos = array(
 
+                'ndoc' => $fila->nDoc,
                 'nombre' => $fila->nombre,
+                'idrol' => $fila->idrol,
                 'rol' => $fila->rol,
                 'foto' => $fila->Foto,
-                'mensaje' => "Bienvenido"
+                'iglesia' => $fila->Iglesia,
+                'estado' => $fila->Estado
+
+                
             );
-            $this->load->view("/plantillas/inicio.inc.php");
-            $this->load->view("/plantillas/navbar.inc.php");
-            $this->load->view("/plantillas/opciones.inc.php", $datos);
-            $this->load->view("menu");
+            $this->session->set_userdata($datos,true);
+
+            if ($this->session->userdata('estado') == 1){
+                if($this->session->userdata('idrol') == 1){
+                    
+                }
+                else if ($this->session->userdata('idrol') == 2)
+                {
+                    $this->load->view("/plantillas/inicio.inc.php");
+                    $this->load->view("/plantillas/navbar.inc.php");
+                    $this->load->view("/plantillas/opciones.inc.php");
+                    $this->load->view("menu");
+                }
+                else if ($this->session->userdata('idrol') == 3)
+                {
+
+                }
+                else if ($this->session->userdata('idrol') == 4)
+                {
+
+                }
+            }
+            
 
         } else {
             $datos = array(
@@ -45,189 +80,128 @@ class OpcionesC extends CI_Controller
     public function oansa()
     {
             //Codigo para cargar la vista de general
-        $nombre = $this->input->post('nombre');
-        $rol = $this->input->post('rol');
-        $foto = $this->input->post('foto');
-
-        $datos = array(
-
-            'nombre' => $nombre,
-            'rol' => $rol,
-            'foto' => $foto,
-            'mensaje' => "Bienvenido"
-        );
+     
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
-        $this->load->view('/plantillas/opciones.inc.php', $datos);
+        $this->load->view('/plantillas/opciones.inc.php');
         $this->load->view('menu');
+    }
+
+    public function configuracion()
+    {
+            //Codigo para cargar la vista de general
+     
+
+        $this->load->view('/plantillas/inicio.inc.php');
+        $this->load->view('/plantillas/navbar.inc.php');
+        $this->load->view('/plantillas/opciones.inc.php');
+        $this->load->view('page-user');
+    }
+
+    public function perfil()
+    {
+            //Codigo para cargar la vista de general
+     
+
+        $this->load->view('/plantillas/inicio.inc.php');
+        $this->load->view('/plantillas/navbar.inc.php');
+        $this->load->view('/plantillas/opciones.inc.php');
+        $this->load->view('page-user');
+    }
+
+    public function cerrarSesion()
+    {
+            //Codigo para cargar la vista de general
+        
+
+        $this->load->view('index');
     }
 
     public function asistencias()
     {
             //Codigo para cargar la vista de estadisticas de asistencia
-        $nombre = $this->input->post('nombre');
-        $rol = $this->input->post('rol');
-        $foto = $this->input->post('foto');
-
-        $datos = array(
-
-            'nombre' => $nombre,
-            'rol' => $rol,
-            'foto' => $foto,
-            'mensaje' => "Bienvenido"
-        );
+    
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
-        $this->load->view('/plantillas/opciones.inc.php', $datos);
+        $this->load->view('/plantillas/opciones.inc.php');
         $this->load->view('page-error');
     }
 
     public function puntaje()
     {
             //Codigo para cargar la vista de estadisticas de puntaje
-        $nombre = $this->input->post('nombre');
-        $rol = $this->input->post('rol');
-        $foto = $this->input->post('foto');
-
-        $datos = array(
-
-            'nombre' => $nombre,
-            'rol' => $rol,
-            'foto' => $foto,
-            'mensaje' => "Bienvenido"
-        );
+    
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
-        $this->load->view('/plantillas/opciones.inc.php', $datos);
+        $this->load->view('/plantillas/opciones.inc.php');
         $this->load->view('page-error');
     }
 
     public function crecimiento()
     {
             //Codigo para cargar la vista de estadisticas de crecimiento
-        $nombre = $this->input->post('nombre');
-        $rol = $this->input->post('rol');
-        $foto = $this->input->post('foto');
-
-        $datos = array(
-
-            'nombre' => $nombre,
-            'rol' => $rol,
-            'foto' => $foto,
-            'mensaje' => "Bienvenido"
-        );
+     
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
-        $this->load->view('/plantillas/opciones.inc.php', $datos);
+        $this->load->view('/plantillas/opciones.inc.php');
         $this->load->view('ui-cards');
     }
 
     public function calificacionEstudiantes()
     {
             //Codigo para cargar la vista de Registrar calificación de estudiantes
-        $nombre = $this->input->post('nombre');
-        $rol = $this->input->post('rol');
-        $foto = $this->input->post('foto');
-
-        $datos = array(
-
-            'nombre' => $nombre,
-            'rol' => $rol,
-            'foto' => $foto,
-            'mensaje' => "Bienvenido"
-        );
+      
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
-        $this->load->view('/plantillas/opciones.inc.php', $datos);
+        $this->load->view('/plantillas/opciones.inc.php');
         $this->load->view('form-samples');
     }
 
     public function calificacionLideres()
     {
             //Codigo para cargar la vista de Registrar calificación de lideres
-        $nombre = $this->input->post('nombre');
-        $rol = $this->input->post('rol');
-        $foto = $this->input->post('foto');
-
-        $datos = array(
-
-            'nombre' => $nombre,
-            'rol' => $rol,
-            'foto' => $foto,
-            'mensaje' => "Bienvenido"
-        );
+     
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
-        $this->load->view('/plantillas/opciones.inc.php', $datos);
+        $this->load->view('/plantillas/opciones.inc.php');
         $this->load->view('page-invoice');
     }
 
     public function miembrosEstudiantes()
     {
             //Codigo para cargar la vista de miembros estudiantes
-        $nombre = $this->input->post('nombre');
-        $rol = $this->input->post('rol');
-        $foto = $this->input->post('foto');
-
-        $datos = array(
-
-            'nombre' => $nombre,
-            'rol' => $rol,
-            'foto' => $foto,
-            'mensaje' => "Bienvenido"
-        );
+      
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
-        $this->load->view('/plantillas/opciones.inc.php', $datos);
+        $this->load->view('/plantillas/opciones.inc.php');
         $this->load->view('page-calendar');
     }
 
     public function miembrosLideres()
     {
             //Codigo para cargar la vista de miembros lideres
-        $nombre = $this->input->post('nombre');
-        $rol = $this->input->post('rol');
-        $foto = $this->input->post('foto');
-
-        $datos = array(
-
-            'nombre' => $nombre,
-            'rol' => $rol,
-            'foto' => $foto,
-            'mensaje' => "Bienvenido"
-        );
+       
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
-        $this->load->view('/plantillas/opciones.inc.php', $datos);
+        $this->load->view('/plantillas/opciones.inc.php');
         $this->load->view('lideres');
     }
 
     public function responsabilidadVer()
     {
             //Codigo para cargar la vista de ver Responsabilidades
-        $nombre = $this->input->post('nombre');
-        $rol = $this->input->post('rol');
-        $foto = $this->input->post('foto');
-
-        $datos = array(
-
-            'nombre' => $nombre,
-            'rol' => $rol,
-            'foto' => $foto,
-            'mensaje' => "Bienvenido"
-        );
-
+      
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
-        $this->load->view('/plantillas/opciones.inc.php', $datos);
+        $this->load->view('/plantillas/opciones.inc.php');
         $this->load->view('form-custom');
     }
 
@@ -248,94 +222,48 @@ class OpcionesC extends CI_Controller
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
-        $this->load->view('/plantillas/opciones.inc.php', $datos);
+        $this->load->view('/plantillas/opciones.inc.php');
         $this->load->view('form-components');
     }
 
     public function cursos()
     {
             //Codigo para cargar la vista de cursos
-        $nombre = $this->input->post('nombre');
-        $rol = $this->input->post('rol');
-        $foto = $this->input->post('foto');
-
-        $datos = array(
-
-            'nombre' => $nombre,
-            'rol' => $rol,
-            'foto' => $foto,
-            'mensaje' => "Bienvenido"
-        );
-
+      
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
-        $this->load->view('/plantillas/opciones.inc.php', $datos);
+        $this->load->view('/plantillas/opciones.inc.php');
         $this->load->view('page-mailbox');
     }
 
     public function noticias()
     {
             //Codigo para cargar la vista de noticias   
-        $data = $this->input->post();
-        print_r($data);
-
-        $nombre = $this->input->post("nombre");
-        $rol = $this->input->post("rol");
-        $foto = $this->input->post("foto");
-
-        $datos = array(
-
-            'nombre' => $nombre,
-            'rol' => $rol,
-            'foto' => $foto,
-            'mensaje' => "Bienvenido"
-        );
-
+     
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
-        $this->load->view('/plantillas/opciones.inc.php', $datos);
+        $this->load->view('/plantillas/opciones.inc.php');
         $this->load->view('noticias');
     }
 
     public function eventos()
     {
             //Codigo para cargar la vista de eventos
-        $nombre = $this->input->post('nombre');
-        $rol = $this->input->post('rol');
-        $foto = $this->input->post('foto');
-
-        $datos = array(
-
-            'nombre' => $nombre,
-            'rol' => $rol,
-            'foto' => $foto,
-            'mensaje' => "Bienvenido"
-        );
-
+      
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
-        $this->load->view('/plantillas/opciones.inc.php', $datos);
+        $this->load->view('/plantillas/opciones.inc.php');
         $this->load->view('eventos');
     }
 
     public function puntajes()
     {
             //Codigo para cargar la vista de puntajes
-        $nombre = $this->input->post('nombre');
-        $rol = $this->input->post('rol');
-        $foto = $this->input->post('foto');
-
-        $datos = array(
-
-            'nombre' => $nombre,
-            'rol' => $rol,
-            'foto' => $foto,
-            'mensaje' => "Bienvenido"
-        );
+      
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
-        $this->load->view('/plantillas/opciones.inc.php', $datos);
+        $this->load->view('/plantillas/opciones.inc.php');
         $this->load->view('table-basic');
     }
 }

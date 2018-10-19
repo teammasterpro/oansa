@@ -11,11 +11,5 @@
             $this->load->view("index", $datos);
             
         }
-
-        public function departamento($pais)
-        {
-            echo $pais;
-            $this->load->model('inicioM');
-        }
     }
     

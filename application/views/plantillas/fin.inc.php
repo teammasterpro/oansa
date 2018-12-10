@@ -1,4 +1,4 @@
-    <script type="text/javascript">
+8    <script type="text/javascript">
     function funcion(){
 
       var nombre = document.getElementById('nombre').innerHTML;

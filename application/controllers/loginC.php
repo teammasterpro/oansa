@@ -17,8 +17,8 @@ class LoginC extends CI_Controller
             $datos = array(
 
                 'nombre' => $fila->nombre,
-                'rol' => $fila->rol,
-                'foto' => $fila->Foto, 
+                'rol' => $fila->tipoLider,
+                'foto' => $fila->perfil, 
                 'mensaje' => "Bienvenido"
             );
             $this->load->view("/plantillas/inicio.inc.php");

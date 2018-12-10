@@ -27,37 +27,29 @@ class OpcionesC extends CI_Controller
 
             $datos = array(
 
-                'ndoc' => $fila->nDoc,
+                'idlider' => $fila->idLider,
                 'nombre' => $fila->nombre,
-                'idrol' => $fila->idrol,
-                'rol' => $fila->rol,
-                'foto' => $fila->Foto,
-                'iglesia' => $fila->Iglesia,
-                'estado' => $fila->Estado
+                'rol' => $fila->tipoLider,
+                'foto' => $fila->perfil,
+                'iglesia' => $fila->iglesia,
+                'estado' => $fila->estado
 
                 
             );
             $this->session->set_userdata($datos,true);
 
-            if ($this->session->userdata('estado') == 1){
-                if($this->session->userdata('idrol') == 1){
+            if ($this->session->userdata('estado') == 'Activo'){
+               if($this->session->userdata('rol') == 'Director General'){
                     
                 }
-                else if ($this->session->userdata('idrol') == 2)
+                else if ($this->session->userdata('rol') == 'Director Local')
                 {
                     $this->load->view("/plantillas/inicio.inc.php");
                     $this->load->view("/plantillas/navbar.inc.php");
                     $this->load->view("/plantillas/opciones.inc.php");
                     $this->load->view("menu");
                 }
-                else if ($this->session->userdata('idrol') == 3)
-                {
-
-                }
-                else if ($this->session->userdata('idrol') == 4)
-                {
-
-                }
+               
             }
             
 
@@ -75,6 +67,11 @@ class OpcionesC extends CI_Controller
         //cookie
         /*$data = array('usuario' => $usuario, 'id' => 0, 'login' => true);
         $this->session->set_userdata($data);*/
+    }
+
+    public function registrariglesia()
+    {
+        $this->load->view('reg-iglesia');
     }
 
     public function oansa()

@@ -1,26 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Main CSS-->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Registrar iglesia</title>
-  </head>
-  <body>
-      <!-- Navbar-->
-    <header class="app-header">
-      <a class="app-header__logo" href="index.html"><input type=image src="img/oansa.png" alt="description" align="Right"></a>
-      <!-- Navbar Right Menu-->
-      <ul class="app-nav">
-        <li><a class="app-nav__item" href="menu.html"><i class="fa fa-book"></i> Estudiante</a></li>
-        <li><a class="app-nav__item" href="reg-iglesia.html"><i class="fa fa-edit"></i> Registrar iglesia</a></li>
-        <li><a class="app-nav__item" href="page-login.html"><i class="fa fa-user"></i> Iniciar sesión</a></li>
-    </ul>
-    </header>
     <br>
     <br>
     <br>

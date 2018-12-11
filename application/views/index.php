@@ -32,7 +32,7 @@
 <body class="app sidebar-mini rtl" style="overflow-x:hidden;">
   <!-- Navbar -->
   <header class="app-header">
-    <a class="app-header__logo" href="index" ><input type="image" src="<?= base_url() ?>img/oansa.png" alt="description" align="Right" /></a>
+    <a class="app-header__logo" href="<?= base_url() ?>index.php" ><input type="image" src="<?= base_url() ?>img/oansa.png" alt="description" align="Left" /></a>
 
     <!-- Navbar Right Menu -->
     <ul class="app-nav">
@@ -307,7 +307,7 @@
     </button>
   </div>
 </div>
-</div>
+</div>z
 </div>
 </ul>
 </header>
@@ -330,8 +330,7 @@
     <div class="card" id="noEvento">
       <div class="card-header">Informacion</div>
       <div class="card-body">
-        <h5 class="card-title" name="titulo"></h5>
-        <p class="card-text text-justify">...No hay eventos en esta iglesia...</p>
+        <p class="card-text text-justify">No hay eventos en esta iglesia</p>
       </div>
     </div>
     <div id="eventosDiv">
@@ -366,10 +365,12 @@
           </font>
         </h4>
         <div class="media text-muted pt-3"></div>
-            
             <div class="card"  id="noNoticias">
-
-              <P>No hay noticias para mostrar </P>
+              <div class="card-header">Informacion</div>
+              <div class="card-body">
+                <p class="card-text text-justify">No hay noticias para mostrar </p>
+              </div>
+              
                             
             </div>
           

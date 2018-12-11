@@ -6,6 +6,7 @@
         public function index()
         {
 
+            $this->load->view("/plantillas/navbarInicio.inc.php");
             $this->load->view("index");
             
         }

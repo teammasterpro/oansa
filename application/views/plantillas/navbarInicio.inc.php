@@ -97,45 +97,6 @@
         </div>
       </form>
 
- <!-- Modal evento -->
-    <div id="modalEventoDiv">
-      <div class="modal fade bd-example-modal-lg" id="modalEvento" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-                <div class="modal-header" >
-                  <h5 class="modal-title colormodal" id="exampleModalCenterTitle" " ><i class="fa fa-calendar"></i> {{eventosmodal.nombre}} </h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                <div class="row">
-                <div class="col-md-7">
-                  <div class="form-group for">
-                    <label class="control-label"><h6>{{eventosmodal.fechaEvento}}</h6></label>
-                    <br>
-                    <h5>Descripcion</h5>
-                    <p class="text-justify"> {{eventosmodal.descripcion}} </p>
-                    <h5>Recomendacion</h5>
-                    <p class="text-justify"> {{eventosmodal.recomendacion}}  </p>
-                  </div>
-                  </div>
-                                     
-                  <div class = "col-md-4">
-                    <img src="<?= base_url() ?>{{eventosmodal.foto}}" style="width: 300px; height: 200px;">
-                  </div>
-                </div>              
-                  
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-close"></i>Cerrar</button>
-                </div>
-                </div>
-          </div>
-        </div>
-       </div>
-
-    </div>
 
 <!-- Modal estudiante -->
 
@@ -311,3 +272,6 @@
 </div>
 </ul>
 </header>
+
+<!-- Sidebar menu -->
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>

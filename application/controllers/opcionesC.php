@@ -60,7 +60,7 @@ class OpcionesC extends CI_Controller
                 'icono' => 'fa fa-check',
                 'tipo' => "danger"
             );
-            //$this->load->view("/plantillas/navbarInicio.inc.php");
+            $this->load->view("/plantillas/navbarInicio.inc.php");
             $this->load->view("index", $datos);
         }
 

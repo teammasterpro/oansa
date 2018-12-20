@@ -110,15 +110,13 @@
           </div>
         </div>
 
-    <!-- Essential javascripts for application to work -->
-    <script src="<? echo base_url() ?>js/jquery-3.2.1.min.js"></script>
-    <script src="<? echo base_url() ?>js/popper.min.js"></script>
-    <script src="<? echo base_url() ?>js/bootstrap.min.js"></script>
-    <script src="<? echo base_url() ?>js/main.js"></script>
-    <!-- The javascript plugin to display page loading on top -->
-    <script src="<? echo base_url() ?>js/plugins/pace.min.js"></script>
+    <!--   Scripts esenciales para las páginas  -->
+    <?php 
+      include_once 'plantillas/scripts.php'
+    ?>
+    
     <!-- Page specific javascripts -->
-    <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js" ></script>
+    <script type="text/javascript" src="<? echo base_url() ?>js/plugins/bootstrap-notify.min.js" ></script>
     <script type="text/javascript" src="<? echo base_url() ?>js/plugins/chart.js" ></script>
     <script type="text/javascript" src="<? echo base_url() ?>js/vue.js" ></script>
     <script type="text/javascript">

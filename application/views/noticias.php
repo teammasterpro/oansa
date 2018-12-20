@@ -1,16 +1,3 @@
-  <?php
-    //include_once 'plantillas/inicio.inc.php' 
-  ?>
-
-  <!-- Navbar-->
-  <?php
-    //include_once 'plantillas/navbar.inc.php' 
-  ?>
-  
-  <?php
-    //include_once 'plantillas/menu.inc.php'
-  ?>
-
   <!--Menu-->
   <main class="app-content">
     <div class="app-title">
@@ -96,13 +83,12 @@
       </div>
     </form>
   </main>  
-  <!-- Essential javascripts for application to work-->
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
-  <!-- The javascript plugin to display page loading on top-->
-  <script src="js/plugins/pace.min.js"></script>
+  
+  <!--   Scripts esenciales para las páginas  -->
+  <?php 
+    include_once 'plantillas/scripts.php'
+  ?>
+
   <!-- Page specific javascripts-->
 
   <?php

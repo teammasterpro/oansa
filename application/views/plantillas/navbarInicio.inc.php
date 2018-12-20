@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="icon" href="<?= base_url() ?>img/oansa.ico" />
+  <link rel="icon" href="<?= base_url() ?>img/oansa.ico" type="image/x-icon">
   <meta
   name="description"
   content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular."
@@ -32,13 +32,13 @@
 <body class="app sidebar-mini rtl" style="overflow-x:hidden;">
   <!-- Navbar -->
   <header class="app-header">
-    <a class="app-header__logo" href="<?= base_url() ?>index.php" ><input type="image" src="<?= base_url() ?>img/oansa.png" alt="description" align="Left" /></a>
+    <a class="app-header__logo" href="<?= base_url() ?>index.php" ><input type="image" width="auto" height="50" src="<?= base_url() ?>img/oansaC.png" alt="description" align="Left" /></a>
 
     <!-- Navbar Right Menu -->
     <ul class="app-nav">
       <li id="list_desplegable">
-        <a class="app-nav__item" href="#"><i class="fa fa-edit"></i>Acerca de</a>
-        <ul>
+        <a class="app-nav__item " href="#"><i class="fa fa-edit"></i>Acerca de</a>
+        <ul class="desplegable">
           <li>
             <a href="#" data-toggle="modal" data-target="#modalOansa">¿Qué es Oansa?</a>
           </li>
@@ -81,11 +81,11 @@
               <div class="modal-body">
                 <div class="form-group">
                   <label class="control-label">Usuario</label>
-                  <input class="form-control" type="text" name="usuario" placeholder="Usuario" autofocus>
+                  <input class="form-control" type="text" name="usuario" placeholder="Usuario" required autofocus>
                 </div>
                 <div class="form-group">
                   <label class="control-label">Contraseña</label>
-                  <input class="form-control" type="password" name="password" placeholder="Contraseña">
+                  <input class="form-control" type="password" name="password" placeholder="Contraseña" required>
                 </div>
               </div>
               <div class="modal-footer">
@@ -136,7 +136,7 @@
 <div class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <img src="<?= base_url() ?>img/oansa.png" alt="Oansa" style="position: initial"/>
+      <img src="<?= base_url() ?>img/oansaC.png" alt="Oansa" width="auto" height="25" style="position: initial"/>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
        <span aria-hidden="true">&times;</span>
       </button>

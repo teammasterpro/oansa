@@ -1,25 +1,4 @@
-8    <script type="text/javascript">
-    function funcion(){
 
-      var nombre = document.getElementById('nombre').innerHTML;
-      var rol = document.getElementById('rol').innerHTML;
-      var foto = document.getElementById("foto").src;
-      alert("Hola mundo " + nombre + "\n" + rol + "\n" + foto);
-
-      $.ajax({
-          type: "POST",
-          url: "localhost/oansa/opcionesC",
-          data: {
-            'nombre': nombre,
-            'rol': rol,
-            'foto': foto
-            }
-        })
-        .done(function( msg ) {
-          alert( "Devolución de PHP "+ msg);
-        });
-    }
-    </script>
     <!-- Google analytics script-->
     <script type="text/javascript">
       if(document.location.hostname == 'pratikborsadiya.in') {

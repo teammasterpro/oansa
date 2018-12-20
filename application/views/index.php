@@ -235,17 +235,13 @@
 
 </div>
 
-    <!-- Essential javascripts for application to work -->
-    <script src="<? echo base_url() ?>js/jquery-3.2.1.min.js"></script>
-    <script src="<? echo base_url() ?>js/popper.min.js"></script>
-    <script src="<? echo base_url() ?>js/bootstrap.min.js"></script>
-    <script src="<? echo base_url() ?>js/main.js"></script>
-    <!-- The javascript plugin to display page loading on top -->
-    <script src="<? echo base_url() ?>js/plugins/pace.min.js"></script>
+    <!--   Scripts esenciales para las páginas  -->
+    <?php 
+      include_once 'plantillas/scripts.php'
+    ?>
     <!-- Page specific javascripts -->
-    <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js" ></script>
-    <script type="text/javascript" src="<? echo base_url() ?>js/plugins/chart.js" ></script>
-    <script type="text/javascript" src="<? echo base_url() ?>js/vue.js" ></script>
+    <script type="text/javascript" src="<? echo base_url() ?>js/plugins/bootstrap-notify.min.js" ></script>
+    
 
     <script type="text/javascript">
        
@@ -348,6 +344,105 @@
             );
         });
       });
+
+      //--------Cargar datos de la cookie-------------------//
+      window.addEventListener('load',cargar,false);
+
+      function cargar() {
+
+        <?php if(isset($mensaje)){
+        ?>
+          $.notify({
+            title: '<? echo $titulo; ?>',
+            icon: '<? echo $icono; ?>',
+            message: '<? echo $mensaje; ?>'
+          },{
+            type: '<? echo $tipo; ?>'
+          });
+
+        <?}?>
+
+        <?php
+        if(isset($_COOKIE['iglesia'])){
+          ?> 
+          $.get("<? echo base_url() ?>inicioC/Noticias/" + <? echo $_COOKIE['iglesia'];?>,
+            inicio,
+            function(data) {
+              var d = $.parseJSON(data);
+              
+              if (Object.entries(d).length === 0) {
+              
+                
+                
+               if(estadoN==false)
+                {
+                  $("#noticiasDiv").css("visibility", "hidden");
+                
+                  $("#noNoticias").css("visibility", "visible");
+                  $("#noNoticias").toggle();
+
+
+                  estadoN=true;
+                }
+               
+
+              } else {
+               
+                if(estadoN==true)
+                {
+               
+                  $("#noticiasDiv").css("visibility", "visible");
+                  $("#noNoticias").css("visibility", "hidden");
+                  $("#noNoticias").toggle();
+                  v_noticasDiv.noticias = d;
+                  estadoN=false;
+                
+                }    
+                     
+              }
+            }
+            );
+
+          $.get("<? echo base_url() ?>inicioC/fotoNoticias/" + <? echo $_COOKIE['iglesia'];?>,
+            inicio,
+            function(data) {
+              var d = $.parseJSON(data);
+
+              v_noticasDiv.fotos = d;
+
+            }
+            );
+
+          $.get("<? echo base_url() ?>inicioC/eventos/" + <? echo $_COOKIE['iglesia'];?>,
+            function(data) {
+              var d = $.parseJSON(data);
+
+              if (Object.entries(d).length === 0) {
+
+                if(estadoE==false)
+                {
+                  $("#eventosDiv").css("visibility", "hidden");
+                $("#noEvento").css("visibility", "visible");
+                $("#noEvento").toggle();
+                estadoE=true;
+                }
+                
+              } else {
+                if(estadoE==true)
+                {
+                $("#eventosDiv").css("visibility", "visible");
+                $("#noEvento").css("visibility", "hidden");
+                $("#noEvento").toggle();
+                v_eventosDiv.eventos = d;
+                estadoE=false;
+                }
+                
+              }
+            }
+            );
+            
+        <?}?>
+      }
 
       $(function() {
         $("#buscar").click(function() {

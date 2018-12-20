@@ -26,48 +26,38 @@ class OpcionesC extends CI_Controller
         if ($fila != null) {
 
             $datos = array(
-
                 'idlider' => $fila->idLider,
                 'nombre' => $fila->nombre,
                 'rol' => $fila->tipoLider,
                 'foto' => $fila->perfil,
                 'iglesia' => $fila->iglesia,
                 'estado' => $fila->estado
-
-                
             );
-            $this->session->set_userdata($datos,true);
+            $this->session->set_userdata($datos, true);
 
-            if ($this->session->userdata('estado') == 'Activo'){
-               if($this->session->userdata('rol') == 'Director General'){
-                    
-                }
-                else if ($this->session->userdata('rol') == 'Director Local')
-                {
+            if ($this->session->userdata('estado') == 'Activo') {
+                if ($this->session->userdata('rol') == 'Director General') {
+
+                } else if ($this->session->userdata('rol') == 'Director Local') {
                     $this->load->view("/plantillas/inicio.inc.php");
                     $this->load->view("/plantillas/navbar.inc.php");
                     $this->load->view("/plantillas/opciones.inc.php");
                     $this->load->view("menu");
                 }
-               
             }
-            
+
 
         } else {
+            
             $datos = array(
                 'titulo' => "Error : ",
                 'mensaje' => "Datos incorrectos",
-                'icono' => 'fa fa-check',
+                'icono' => 'fa fa-ban',
                 'tipo' => "danger"
             );
             $this->load->view("/plantillas/navbarInicio.inc.php");
             $this->load->view("index", $datos);
         }
-
-
-        //cookie
-        /*$data = array('usuario' => $usuario, 'id' => 0, 'login' => true);
-        $this->session->set_userdata($data);*/
     }
 
     public function registrariglesia()
@@ -79,7 +69,7 @@ class OpcionesC extends CI_Controller
     public function oansa()
     {
             //Codigo para cargar la vista de general
-     
+
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
@@ -90,7 +80,7 @@ class OpcionesC extends CI_Controller
     public function configuracion()
     {
             //Codigo para cargar la vista de general
-     
+
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
@@ -101,7 +91,7 @@ class OpcionesC extends CI_Controller
     public function perfil()
     {
             //Codigo para cargar la vista de general
-     
+
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
@@ -112,15 +102,15 @@ class OpcionesC extends CI_Controller
     public function cerrarSesion()
     {
             //Codigo para cargar la vista de general
-        
 
+        session_destroy();
         $this->load->view('index');
     }
 
     public function asistencias()
     {
             //Codigo para cargar la vista de estadisticas de asistencia
-    
+
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
@@ -131,7 +121,7 @@ class OpcionesC extends CI_Controller
     public function puntaje()
     {
             //Codigo para cargar la vista de estadisticas de puntaje
-    
+
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
@@ -142,7 +132,7 @@ class OpcionesC extends CI_Controller
     public function crecimiento()
     {
             //Codigo para cargar la vista de estadisticas de crecimiento
-     
+
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
@@ -153,7 +143,7 @@ class OpcionesC extends CI_Controller
     public function calificacionEstudiantes()
     {
             //Codigo para cargar la vista de Registrar calificación de estudiantes
-      
+
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
@@ -164,7 +154,7 @@ class OpcionesC extends CI_Controller
     public function calificacionLideres()
     {
             //Codigo para cargar la vista de Registrar calificación de lideres
-     
+
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
@@ -175,7 +165,7 @@ class OpcionesC extends CI_Controller
     public function miembrosEstudiantes()
     {
             //Codigo para cargar la vista de miembros estudiantes
-      
+
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
@@ -186,7 +176,7 @@ class OpcionesC extends CI_Controller
     public function miembrosLideres()
     {
             //Codigo para cargar la vista de miembros lideres
-       
+
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
@@ -197,7 +187,7 @@ class OpcionesC extends CI_Controller
     public function responsabilidadVer()
     {
             //Codigo para cargar la vista de ver Responsabilidades
-      
+
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
         $this->load->view('/plantillas/opciones.inc.php');
@@ -228,7 +218,7 @@ class OpcionesC extends CI_Controller
     public function cursos()
     {
             //Codigo para cargar la vista de cursos
-      
+
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
         $this->load->view('/plantillas/opciones.inc.php');
@@ -238,7 +228,7 @@ class OpcionesC extends CI_Controller
     public function noticias()
     {
             //Codigo para cargar la vista de noticias   
-     
+
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
         $this->load->view('/plantillas/opciones.inc.php');
@@ -248,7 +238,7 @@ class OpcionesC extends CI_Controller
     public function eventos()
     {
             //Codigo para cargar la vista de eventos
-      
+
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');
         $this->load->view('/plantillas/opciones.inc.php');
@@ -258,7 +248,7 @@ class OpcionesC extends CI_Controller
     public function puntajes()
     {
             //Codigo para cargar la vista de puntajes
-      
+
 
         $this->load->view('/plantillas/inicio.inc.php');
         $this->load->view('/plantillas/navbar.inc.php');

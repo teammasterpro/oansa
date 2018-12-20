@@ -1998,7 +1998,7 @@ pre code {
 .form-control:focus {
   color: #495057;
   background-color: #FFF;
-  border-color: #020096;
+  border-color: #009688;
   outline: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -2554,14 +2554,14 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #FFF;
-  background-color: #020096;
-  border-color: #020096;
+  background-color: #009688;
+  border-color: #009688;
 }
 
 .btn-primary:hover {
   color: #FFF;
-  background-color: #030174;
-  border-color: #030174;
+  background-color: #007065;
+  border-color: #00635a;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -3170,7 +3170,6 @@ fieldset:disabled a.btn {
 .btn-block {
   display: block;
   width: 100%;
-  background-color: #020096;
 }
 
 .btn-block + .btn-block {
@@ -5721,7 +5720,7 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1000; /*-----------Cambio para que el modal no aparesca oculto-----------------*/
+  z-index: 1000;
   background-color: #000;
 }
 
@@ -5795,10 +5794,6 @@ button.close {
   width: 50px;
   height: 50px;
   overflow: scroll;
-}
-
-.scroll {
-  overflow: auto;
 }
 
 @media (min-width: 576px) {
@@ -13559,7 +13554,7 @@ be a descendant of the grid when it is being dragged.
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #020096;
+  background-color: #009688;
   z-index: 1030;
   padding-right: 15px;
 }
@@ -13580,11 +13575,11 @@ be a descendant of the grid when it is being dragged.
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
-  color: #FAFE0E;
+  color: #fff;
   text-align: center;
   font-family: 'Niconne';
   padding: 0 15px;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 400;
   line-height: 50px;
 }
@@ -13596,7 +13591,7 @@ be a descendant of the grid when it is being dragged.
             flex: 0 0 auto;
     display: block;
     width: 230px;
-    background-color: #020096;
+    background-color: #007d71;
   }
 }
 
@@ -13609,7 +13604,6 @@ be a descendant of the grid when it is being dragged.
   padding: 0 15px;
   font-family: fontAwesome;
   color: #fff;
-  background-color: #070570;
   line-height: 2.4;
   -webkit-transition: background-color 0.3s ease;
   -o-transition: background-color 0.3s ease;
@@ -13631,7 +13625,7 @@ be a descendant of the grid when it is being dragged.
 
 .app-sidebar__toggle:focus, .app-sidebar__toggle:hover {
   color: #fff;
-  background-color: #04034d;
+  background-color: #00635a;
   text-decoration: none;
 }
 
@@ -14883,19 +14877,17 @@ be a descendant of the grid when it is being dragged.
       -ms-flex-pack: center;
           justify-content: center;
   min-height: 100vh;
-  
 }
 
 .login-content .logo {
   margin-bottom: 40px;
   font-family: "Niconne";
-  color: #FAFE0E;
+  color: #fff;
 }
 
 .login-content .logo h1 {
   font-size: 52px;
   font-weight: 400;
-  
 }
 
 .login-content .login-box {
@@ -15243,11 +15235,7 @@ be a descendant of the grid when it is being dragged.
   color: #666;
 }
 
-/*-----------------Cambios realizados ----------------*/
-p {
-  text-align: center;
-}
-
+/*----------------------------------------*/
 ul, ol {
   list-style:none;
 }
@@ -15261,7 +15249,7 @@ li a {
 }
 
 
-.desplegable {
+li ul {
   color:#fff;
   background-color:#020096; /*Color azul #020096*/
   display:none;
